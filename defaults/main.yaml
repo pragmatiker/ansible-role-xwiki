@@ -9,4 +9,4 @@ xwiki_tomcat_group: "tomcat-{{software}}-{{stage}}"
 xwiki_dwnldurl: "http://nexus.xwiki.org/nexus/content/groups/public/org/xwiki/platform/xwiki-platform-distribution-war/{{ xwiki_version }}/xwiki-platform-distribution-war-{{ xwiki_version }}.war"
 xwiki_archive: xwiki-{{xwiki_version}}.war
 xwiki_path: "{{basedir}}/{{software}}-{{stage}}"
-xwiki_webapp: "{{xwiki_path}}/webapps"
+xwiki_webapp: "{{xwiki_path}}/webapps/{{software}}-{{stage}}"

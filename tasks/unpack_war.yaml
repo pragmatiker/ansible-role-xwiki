@@ -1,4 +1,11 @@
 ---
+- name: "Create {{xwiki_webapp}}"
+  file:
+    path: "{{xwiki_webapp}}"
+    state: directory
+    owner: "{{ xwiki_tomcat_user }}"
+    group: "{{ xwiki_tomcat_group }}"
+
 - name: Unapck xwiki WAR
   unarchive:
     src: "/tmp/{{xwiki_archive}}"
@@ -6,3 +13,4 @@
     remote_src: yes
     owner: "{{ xwiki_tomcat_user }}"
     group: "{{ xwiki_tomcat_group }}"
+    creates: "{{xwiki_webapp}}/WEB-INF"
