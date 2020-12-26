@@ -4,4 +4,5 @@
     src: "/tmp/{{xwiki_archive}}"
     dest: "{{xwiki_webapp}}"
     remote_src: yes
-    owner: "{{ tomcat_user }}"
+    owner: "{{ xwiki_tomcat_user }}"
+    group: "{{ xwiki_tomcat_group }}"

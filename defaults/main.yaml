@@ -2,6 +2,8 @@
 ### defailts for playbook variables
 xwiki_version: 11.10.12
 basedir: /opt/tomcat
+xwiki_tomcat_user: "tomcat-{{software}}-{{stage}}"
+xwiki_tomcat_group: "tomcat-{{software}}-{{stage}}"
 
 ### derived variables
 xwiki_dwnldurl: "http://nexus.xwiki.org/nexus/content/groups/public/org/xwiki/platform/xwiki-platform-distribution-war/{{ xwiki_version }}/xwiki-platform-distribution-war-{{ xwiki_version }}.war"
