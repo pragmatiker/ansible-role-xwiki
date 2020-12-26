@@ -1,0 +1,5 @@
+---
+- name: Download xwiki WAR
+  get_url:
+    url: "{{xwiki_dwnldurl}}"
+    dest: "/tmp/{{xwiki_archive}}"

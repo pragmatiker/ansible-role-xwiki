@@ -1,0 +1,8 @@
+---
+- name: Download xwiki WAR
+  import_tasks: download_xwiki.yaml
+  tags: download
+
+- name: Unpack xwiki WAR
+  import_tasks: unpack_war.yaml
+  tags: unpack

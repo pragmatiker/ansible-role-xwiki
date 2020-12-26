@@ -1,0 +1,7 @@
+---
+- name: Unapck xwiki WAR
+  unarchive:
+    src: "/tmp/{{xwiki_archive}}"
+    dest: "{{xwiki_webapp}}"
+    remote_src: yes
+    owner: "{{ tomcat_user }}"
