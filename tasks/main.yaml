@@ -1,8 +1,16 @@
 ---
 - name: Download xwiki WAR
-  import_tasks: download_xwiki.yaml
+  import_tasks: xwiki_download_war.yaml
   tags: xwiki_download_war
 
 - name: Unpack xwiki WAR
-  import_tasks: unpack_war.yaml
+  import_tasks: xwiki_unpack_war.yaml
   tags: xwiki_unpack_war
+
+- name: Create and configure xwiki data dir
+  import_tasks: xwiki_data_dir.yaml
+  tags: xwiki_data_dir
+
+- name: Configure xwiki hibenrate and install driver
+  import_tasks: xwiki_hibernate.yaml
+  tags: xwiki_hibernate

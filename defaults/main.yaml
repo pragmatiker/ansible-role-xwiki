@@ -5,9 +5,11 @@ basedir: /opt/tomcat
 
 ### derived variables
 xwiki_dwnldurl: "http://nexus.xwiki.org/nexus/content/groups/public/org/xwiki/platform/xwiki-platform-distribution-war/{{ xwiki_version }}/xwiki-platform-distribution-war-{{ xwiki_version }}.war"
+jdbc_dwnldurl: "https://downloads.mariadb.com/Connectors/java/connector-java-2.7.1/mariadb-java-client-2.7.1.jar"
 xwiki_archive: xwiki-{{xwiki_version}}.war
 xwiki_tomcat_instance: "tomcat-{{software}}-{{stage}}"
 xwiki_tomcat_user: "{{xwiki_tomcat_instance}}"
 xwiki_tomcat_group: "{{xwiki_tomcat_instance}}"
-xwiki_path: "{{basedir}}/{{xwiki_tomcat_instance}}"
-xwiki_webapp: "{{xwiki_path}}/webapps/{{software}}-{{stage}}"
+xwiki_tomcat_path: "{{basedir}}/{{xwiki_tomcat_instance}}"
+xwiki_webapp: "{{xwiki_tomcat_path}}/webapps/{{software}}-{{stage}}"
+xwiki_data_dir: "{{basedir}}/data-{{software}}-{{stage}}"
