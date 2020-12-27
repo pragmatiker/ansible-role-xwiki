@@ -18,6 +18,12 @@
   hosts: server
   gather_facts: yes
   become: yes
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+    - name: Ensure unip is installed
+      package: name=unzip state=present
   vars:
     basedir: /opt/tomcat
     software: xwiki
