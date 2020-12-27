@@ -1,15 +1,15 @@
 # ansible-role-xwiki
 
 ### Minimalist approach to Deploy xwiki with tomcat
-### Uses pragmatiker/ansible-role-tomcat
+### Uses pragmatiker/ansible-role-tomcat and depends on existing DB
 ### At the Moment it has tasks to:
 - [x] Downlad WAR from xwiki.org
 - [x] Unpack WAR to webapps folder 
+- [x] Create configs for Database and other xwiki setup stuff
 
 ### ToDo:
-- [ ] Create configs for Database and other xwiki setup stuff
-- [ ] Create Dabase
-- [ ] See if I can make it loop through multiple Instances or resort to multiple plays
+- [ ] Also create Dabase on demand
+- [ ] See if I can make it loop through multiple Instances on one host
  
 ### Example Playbook 
 ```
