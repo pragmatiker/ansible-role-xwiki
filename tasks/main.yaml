@@ -11,6 +11,10 @@
   import_tasks: xwiki_data_dir.yaml
   tags: xwiki_data_dir
 
-- name: Configure xwiki hibenrate and install driver
-  import_tasks: xwiki_hibernate.yaml
-  tags: xwiki_hibernate
+- name: Install jdbc driver
+  import_tasks: xwiki_jdbc_driver.yaml
+  tags: xwiki_jdbc_driver
+ 
+- name: Create configs
+  import_tasks: xwiki_configs.yaml
+  tags: xwiki_configs

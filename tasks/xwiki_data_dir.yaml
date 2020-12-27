@@ -3,12 +3,6 @@
   file:
     path: "{{xwiki_data_dir}}"
     state: directory
-    owner: "{{ xwiki_tomcat_user }}"
-    group: "{{ xwiki_tomcat_group }}"
-    
-- name: "Set environment.permanentDirectory={{xwiki_data_dir}}"
-  lineinfile:
-    dest: "{{xwiki_webapp}}/WEB-INF/xwiki.properties"
-    state: present
-    regexp: '#?\ ?environment.permanentDirectory='
-    line: "environment.permanentDirectory={{xwiki_data_dir}}"
+    owner: "{{xwiki_tomcat_user}}"
+    group: "{{xwiki_tomcat_group}}"
+   

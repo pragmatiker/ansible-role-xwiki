@@ -96,10 +96,10 @@
          If you want the main wiki database to be different than "xwiki" (or the default schema for schema based engines)
          you will also have to set the property xwiki.db in xwiki.cfg file
     -->
-    <property name="hibernate.connection.url">jdbc:hsqldb:file:${environment.permanentDirectory}/database/xwiki_db;shutdown=true</property>
-    <property name="hibernate.connection.username">sa</property>
-    <property name="hibernate.connection.password"></property>
-    <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+    <property name="hibernate.connection.url">{{xwiki_db_url}}</property>
+    <property name="hibernate.connection.username">{{xwiki_db_user}}</property>
+    <property name="hibernate.connection.password">{{xwiki_db_pass}}</property>
+    <property name="hibernate.connection.driver_class">{{xwiki_db_class}}</property>
 
     <property name="hibernate.connection.charSet">UTF-8</property>
     <property name="hibernate.connection.useUnicode">true</property>

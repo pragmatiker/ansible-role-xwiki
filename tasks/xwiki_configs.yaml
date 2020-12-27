@@ -1,0 +1,13 @@
+---
+- name: Create config files
+  template:
+    src: "{{item.src}}"
+    dest: "{{item.dest}}"
+    owner: "{{xwiki_tomcat_user}}"
+    group: "{{xwiki_tomcat_group}}"
+    mode: '0440'
+  with_items:
+    - src: xwiki.properties.j2
+      dest: "{{xwiki_webapp}}/WEB-INF/xwiki.properties"
+    - src: hibernate.cfg.xml.j2
+      dest: "{{xwiki_webapp}}/WEB-INF/hibernate.cfg.xml"

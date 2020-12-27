@@ -3,5 +3,5 @@
   get_url:
     url: "{{jdbc_dwnldurl}}"
     dest: "{{xwiki_webapp}}/WEB-INF/lib"
-    owner: "{{ xwiki_tomcat_user }}"
-    group: "{{ xwiki_tomcat_group }}"
+    owner: "{{xwiki_tomcat_user}}"
+    group: "{{xwiki_tomcat_group}}"
