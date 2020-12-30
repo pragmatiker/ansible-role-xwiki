@@ -3,19 +3,18 @@
 xwiki_version: 11.10.12
 basedir: /opt/tomcat
 xwiki_db_host: "localhost"
-xwiki_db_user: "user-{{software}}-{{stage}}"
-xwiki_db_name: "db_{{software}}_{{stage}}"
+xwiki_db_user: "user-{{xwiki_basename}}"
+xwiki_db_name: "db_{{xwiki_basename | replace('-','_')}}"
 xwiki_db_pass: "xwiki-qs"
 
 ### derived variables
 xwiki_dwnldurl: "http://nexus.xwiki.org/nexus/content/groups/public/org/xwiki/platform/xwiki-platform-distribution-war/{{ xwiki_version }}/xwiki-platform-distribution-war-{{ xwiki_version }}.war"
 jdbc_dwnldurl: "https://downloads.mariadb.com/Connectors/java/connector-java-2.7.1/mariadb-java-client-2.7.1.jar"
 xwiki_archive: "xwiki-{{xwiki_version}}.war"
-xwiki_tomcat_instance: "tomcat-{{software}}-{{stage}}"
-xwiki_tomcat_user: "{{xwiki_tomcat_instance}}"
-xwiki_tomcat_group: "{{xwiki_tomcat_instance}}"
-xwiki_tomcat_path: "{{basedir}}/{{xwiki_tomcat_instance}}"
-xwiki_webapp: "{{xwiki_tomcat_path}}/webapps/{{software}}-{{stage}}"
-xwiki_data_dir: "{{basedir}}/data-{{software}}-{{stage}}"
+xwiki_basename: "{{software | default(software)}}-{{item.instance | default(instance)}}-{{item.stage | default(stage)}}"
+tomcat_instance: "tomcat-{{xwiki_basename}}"
+xwiki_tomcat_path: "{{basedir}}/{{tomcat_instance}}"
+xwiki_webapp: "{{xwiki_tomcat_path}}/webapps/{{xwiki_basename}}"
+xwiki_data_dir: "{{basedir}}/data-{{xwiki_basename}}"
 xwiki_db_class: "org.mariadb.jdbc.Driver"
 xwiki_db_url: "jdbc:mariadb://{{xwiki_db_host}}/{{xwiki_db_name}}?useSSL=false"
