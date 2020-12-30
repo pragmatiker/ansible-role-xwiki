@@ -1,0 +1,8 @@
+---
+- name: Install MaraiDB Server
+  package: name=mariadb-server state=present 
+  
+- name: Have MariDB Server Stop
+  service: name=mariadb state=stopped
+
+  
