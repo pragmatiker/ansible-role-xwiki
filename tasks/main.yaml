@@ -18,3 +18,7 @@
 - name: Create configs
   import_tasks: xwiki_configs.yaml
   tags: xwiki_configs
+
+- name: Install MaraiDB and create Database
+  import_tasks: xwiki_mariadb.yaml
+  tags: xwiki_mariadb
