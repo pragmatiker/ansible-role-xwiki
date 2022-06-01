@@ -1,6 +1,6 @@
 ---
 ### defaults for playbook variables
-xwiki_version: 11.10.12
+xwiki_version: 14.4
 basedir: /opt/tomcat
 xwiki_db_host: "localhost"
 xwiki_db_user: "user-{{xwiki_basename}}"
