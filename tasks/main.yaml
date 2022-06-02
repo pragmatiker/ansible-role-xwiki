@@ -8,10 +8,6 @@
   import_tasks: xwiki_download_war.yaml
   tags: xwiki_download_war
 
-- name: Unpack xwiki WAR
-  import_tasks: xwiki_unpack_war.yaml
-  tags: xwiki_unpack_war
-
 # Run for every instance
 - name: "[xwiki_instance_data_dir]"
   import_tasks: xwiki_instance_data_dir.yaml
@@ -33,7 +29,14 @@
   loop: "{{ instances }}"
   loop_control:
     label: "{{ item.instance }}"
-  
+
+- name: "[xwiki_instance_unpack_war]"
+  import_tasks: xwiki_instance_unpack_war.yaml
+  tags: xwiki_instance_unpack_war  
+  loop: "{{ instances }}"
+  loop_control:
+    label: "{{ item.instance }}"
+    
 - name: "[ xwiki_instance_db ]"
   import_tasks: xwiki_instance_db.yaml
   tags: xwiki_instance_db
