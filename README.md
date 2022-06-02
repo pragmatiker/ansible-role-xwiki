@@ -6,10 +6,10 @@
 - [x] Downlad WAR from xwiki.org
 - [x] Unpack WAR to webapps folder 
 - [x] Create configs for Database and other xwiki setup stuff
+- [x] Make it loop through multiple Instances on one host. prod/dev/qs 
 
 ### ToDo:
-- [ ] Also create Dabase on demand
-- [ ] See if I can make it loop through multiple Instances on one host. prod/dev/qs 
+- [ ] Create Database on demand
  
 ### Example Playbook 
 ```
