@@ -3,8 +3,8 @@
   template:
     src: "{{item.src}}"
     dest: "{{item.dest}}"
-    owner: "{{tomcat_instance}}"
-    group: "{{tomcat_instance}}"
+    owner: "{{xwiki_tomcat_instance}}"
+    group: "{{xwiki_tomcat_instance}}"
     mode: '0440'
   with_items:
     - src: xwiki.properties.j2
