@@ -1,0 +1,8 @@
+---
+- name: "[xwiki_instance_data_dir] - Create xWiki data dir {{xwiki_instance_data_dir}}"
+  file:
+    path: "{{xwiki_data_dir}}"
+    state: directory
+    owner: "{{xwiki_tomcat_instance}}"
+    group: "{{xwiki_tomcat_instance}}"
+   
