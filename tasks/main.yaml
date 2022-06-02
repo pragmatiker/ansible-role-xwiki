@@ -13,24 +13,30 @@
   tags: xwiki_unpack_war
 
 # Run for every instance
-- name: Create and configure xwiki data dir
-  import_tasks: xwiki_data_dir.yaml
-  tags: xwiki_data_dir
+- name: "[xwiki_instance_data_dir]"
+  import_tasks: xwiki_instance_data_dir.yaml
+  tags: xwiki_instance_data_dir
+  loop: "{{ instances }}"
+  loop_control:
+    label: "{{ item.instance }}"
 
-- name: Install jdbc driver
-  import_tasks: xwiki_jdbc_driver.yaml
-  tags: xwiki_jdbc_driver
+- name: "[xwiki_instance_jdbc_driver]"
+  import_tasks: xwiki_instance_jdbc_driver.yaml
+  tags: xwiki_instance_jdbc_driver
+  loop: "{{ instances }}"
+  loop_control:
+    label: "{{ item.instance }}"
  
-- name: [xwiki_instance_configs]
+- name: "[xwiki_instance_configs]"
   import_tasks: xwiki_instance_configs.yaml
   tags: xwiki_instance_configs
   loop: "{{ instances }}"
   loop_control:
     label: "{{ item.instance }}"
   
-- name: [ xwiki_instance_db ]
+- name: "[ xwiki_instance_db ]"
   import_tasks: xwiki_instance_db.yaml
-  tags: xwiki_install_mariadb
+  tags: xwiki_instance_db
   loop: "{{ instances }}"
   loop_control:
     label: "{{ item.instance }}"
