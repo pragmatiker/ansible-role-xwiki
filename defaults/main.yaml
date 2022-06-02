@@ -8,7 +8,7 @@ xwiki_archive: "xwiki-{{xwiki_version}}.war"
 xwiki_db_host: "localhost"
 
 ### Instance dependant variables
-xwiki_basename: "{{xwiki-{{item.instance | default(instance)}}-{{item.stage | default(stage)}}"
+xwiki_basename: "xwiki-{{item.instance | default(instance)}}-{{item.stage | default(stage)}}"
 xwiki_tomcat_instance: "tomcat-{{xwiki_basename}}"
 xwiki_tomcat_path: "{{xwiki_basedir}}/{{tomcat_instance}}"
 xwiki_webapp: "{{xwiki_tomcat_path}}/webapps/{{xwiki_basename}}"
