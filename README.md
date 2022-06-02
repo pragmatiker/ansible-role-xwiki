@@ -22,7 +22,7 @@
     - name: Update apt cache.
       apt: update_cache=true cache_valid_time=600
       when: ansible_os_family == 'Debian'
-    - name: Ensure unip is installed
+    - name: Ensure unzip is installed
       package: name=unzip state=present
    vars:
      basedir: /opt/tomcat
