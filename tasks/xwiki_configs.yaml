@@ -1,5 +1,5 @@
 ---
-- name: [xwiki_configs] - Create config files
+- name: [xwiki_instance_configs] - Create config files
   template:
     src: "{{item.src}}"
     dest: "{{item.dest}}"
