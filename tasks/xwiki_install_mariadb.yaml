@@ -1,8 +1,10 @@
 ---
 - name: "[xwiki_install_mariadb] - Install MariaDB Server"
-  package: name=mariadb-server state=present 
+  package:
+    name: mariadb-server
+    state: present 
   
 - name: "[xwiki_install_mariadb] - Have MariaDB Server Stop"
-  service: name=mariadb state=stopped
-
-  
+  service: 
+    name: mariadb
+    state: stopped
