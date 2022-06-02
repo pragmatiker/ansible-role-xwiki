@@ -1,0 +1,16 @@
+---
+- name: "[xwiki_instance_unpack_war] - Create {{xwiki_webapp}}"
+  file:
+    path: "{{xwiki_webapp}}"
+    state: directory
+    owner: "{{ xwiki_tomcat_instance }}"
+    group: "{{ xwiki_tomcat_instance }}"
+
+- name: "[xwiki_instance_unpack_war] - Unapck xwiki WAR"
+  unarchive:
+    src: "/tmp/{{xwiki_archive}}"
+    dest: "{{xwiki_webapp}}"
+    remote_src: yes
+    owner: "{{ xwiki_tomcat_instance }}"
+    group: "{{ xwiki_tomcat_instance }}"
+    creates: "{{xwiki_webapp}}/WEB-INF"
