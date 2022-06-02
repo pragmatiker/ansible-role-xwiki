@@ -24,14 +24,31 @@
       when: ansible_os_family == 'Debian'
     - name: Ensure unip is installed
       package: name=unzip state=present
-  vars:
-    basedir: /opt/tomcat
-    software: xwiki
-    stage: qs
-    tomcat_version: 8.5.61
-    xwiki_version: 11.10.12
-    shutdown_port: 8005
-    http_port: 8080
+   vars:
+     basedir: /opt/tomcat
+     software: xwiki
+     xwiki_version: 14.4
+     stage: qs
+     tomcat_version: 9.0.63
+     instances:
+       - instance: acme
+         http_port: 8080
+         shutdown_port: 8005
+         db_passwd: CTS9K4XKfO
+         stage: dev
+       - instance: umbrellacorp
+         http_port: 9080
+         shutdown_port: 9005
+         db_passwd: a08tg6zz81
+         stage: viral
+       - instance: starkindustries
+         http_port: 10080
+         shutdown_port: 10005
+         db_passwd: E4G144kL6t
+       - instance: nebula
+         http_port: 11080
+         shutdown_port: 11005
+         db_passwd: I80BuBXzh6
   roles:
     - role: ansible-role-tomcat
     - role: ansible-role-xwiki
