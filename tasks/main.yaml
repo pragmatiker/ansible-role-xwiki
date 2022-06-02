@@ -1,4 +1,5 @@
 ---
+# Run once
 - name: [ xwiki_install_mariadb ]
   import_tasks: xwiki_install-mariadb.yaml
   tags: xwiki_install_mariadb
@@ -11,6 +12,7 @@
   import_tasks: xwiki_unpack_war.yaml
   tags: xwiki_unpack_war
 
+# Run for every instance
 - name: Create and configure xwiki data dir
   import_tasks: xwiki_data_dir.yaml
   tags: xwiki_data_dir
@@ -32,5 +34,3 @@
   loop: "{{ instances }}"
   loop_control:
     label: "{{ item.instance }}"
-
-
