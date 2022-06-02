@@ -1,16 +1,18 @@
 ---
-- name: [xwiki_instance_configs] - Create config files
+- name: "[xwiki_instance_configs] - Create config files"
   template:
-    src: "{{item.src}}"
-    dest: "{{item.dest}}"
+    src: "{{inner_item.src}}"
+    dest: "{{inner_item.dest}}"
     owner: "{{xwiki_tomcat_instance}}"
     group: "{{xwiki_tomcat_instance}}"
     mode: '0440'
-  with_items:
+  loop:
     - src: xwiki.properties.j2
       dest: "{{xwiki_webapp}}/WEB-INF/xwiki.properties"
     - src: hibernate.cfg.xml.j2
       dest: "{{xwiki_webapp}}/WEB-INF/hibernate.cfg.xml"
     - src: xwiki.cfg.j2
       dest: "{{xwiki_webapp}}/WEB-INF/xwiki.cfg"
+  loop_control:
+    loop_var: inner_item   
       

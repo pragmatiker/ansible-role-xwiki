@@ -1,44 +1,48 @@
 ---
 # Run once
-- name: [ xwiki_install_mariadb ]
-  import_tasks: xwiki_install-mariadb.yaml
+- name: "[ xwiki_install_mariadb ]"
+  include_tasks: xwiki_install_mariadb.yaml
   tags: xwiki_install_mariadb
   
-- name: Download xwiki WAR
-  import_tasks: xwiki_download_war.yaml
+- name: "[xwiki_download_war]"
+  include_tasks: xwiki_download_war.yaml
   tags: xwiki_download_war
 
 # Run for every instance
 - name: "[xwiki_instance_data_dir]"
-  import_tasks: xwiki_instance_data_dir.yaml
+  include_tasks: xwiki_instance_data_dir.yaml
   tags: xwiki_instance_data_dir
   loop: "{{ instances }}"
   loop_control:
     label: "{{ item.instance }}"
 
+- name: "[xwiki_instance_unpack_war]"
+  include_tasks: xwiki_instance_unpack_war.yaml
+  tags: xwiki_instance_unpack_war  
+  loop: "{{ instances }}"
+  loop_control:
+    label: "{{ item.instance }}"
+
 - name: "[xwiki_instance_jdbc_driver]"
-  import_tasks: xwiki_instance_jdbc_driver.yaml
+  include_tasks: xwiki_instance_jdbc_driver.yaml
   tags: xwiki_instance_jdbc_driver
   loop: "{{ instances }}"
   loop_control:
     label: "{{ item.instance }}"
  
 - name: "[xwiki_instance_configs]"
-  import_tasks: xwiki_instance_configs.yaml
+  include_tasks: xwiki_instance_configs.yaml
   tags: xwiki_instance_configs
   loop: "{{ instances }}"
   loop_control:
     label: "{{ item.instance }}"
 
-- name: "[xwiki_instance_unpack_war]"
-  import_tasks: xwiki_instance_unpack_war.yaml
-  tags: xwiki_instance_unpack_war  
-  loop: "{{ instances }}"
-  loop_control:
-    label: "{{ item.instance }}"
-    
 - name: "[ xwiki_instance_db ]"
-  import_tasks: xwiki_instance_db.yaml
+  include_tasks: 
+    file: xwiki_instance_db.yaml
+    apply:
+      tags:
+        - xwiki_instance_db
   tags: xwiki_instance_db
   loop: "{{ instances }}"
   loop_control:

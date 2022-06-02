@@ -1,1 +1,7 @@
+---
+- name: "[xwiki_instance_db] - Create some db"
+  shell: "mysql -u root -e \"create database '{{xwiki_db_name}}' default character set utf8mb4 collate utf8mb4_bin\""
+  register: Wahtever
 
+- debug:
+    msg: "{{xwiki_db_name}}"
