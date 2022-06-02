@@ -1,7 +1,7 @@
 ---
 ### defaults for all instances
 xwiki_version: 14.4
-xwiki_basedir: "{{basedir | default('/opt/pisscat')}}"
+xwiki_basedir: "{{basedir | default('/opt/tomcat')}}"
 xwiki_war_dwnldurl: "http://nexus.xwiki.org/nexus/content/groups/public/org/xwiki/platform/xwiki-platform-distribution-war/{{ xwiki_version }}/xwiki-platform-distribution-war-{{ xwiki_version }}.war"
 xwiki_jdbc_dwnldurl: "https://downloads.mariadb.com/Connectors/java/connector-java-2.7.1/mariadb-java-client-2.7.1.jar"
 xwiki_archive: "xwiki-{{xwiki_version}}.war"
