@@ -1,5 +1,5 @@
 ---
-- name: Install JDBC driver
+- name: [xwiki_instance_jdbc_driver] - Install JDBC driver
   get_url:
     url: "{{jdbc_dwnldurl}}"
     dest: "{{xwiki_webapp}}/WEB-INF/lib"
