@@ -1,15 +1,20 @@
 # ansible-role-xwiki
 
-### Minimalist approach to Deploy xwiki with tomcat
-### Uses pragmatiker/ansible-role-tomcat and depends on existing DB
+### Minimalist approach to deploy multiple empty xwiki instances on tomcat & mariadb
+### Depends on pragmatiker/ansible-role-tomcat
+
 ### At the Moment it has tasks to:
+- [x] Install MariaDB Server
 - [x] Downlad WAR from xwiki.org
+- [x] Create persistent data dir 
 - [x] Unpack WAR to webapps folder 
-- [x] Create configs for Database and other xwiki setup stuff
-- [x] Make it loop through multiple Instances on one host. prod/dev/qs 
+- [x] Template WEB-INF/hibernate.cfg.xml, WEB-INF/xwiki.cfg & WEB-INF/xwiki.propterties
+- [x] Download and install JDBC driver to WEBB-INF/lib
+- [x] Create DB and DB User
 
 ### ToDo:
-- [ ] Create Database on demand
+- [ ] Call handler to start tomcat
+- [ ] Ansible vault via include_vars
  
 ### Example Playbook 
 ```
