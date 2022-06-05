@@ -68,5 +68,12 @@ ansible-galaxy install -r requirements.yaml
 /opt/tomcat/tomcat-xwiki-acme-dev # Tomcat instance
 /opt/tomcat/tomcat-xwiki-acme-dev/webapps/xwiki-acme-dev # Deployed WAR file
 /opt/tomcat/data-xwiki-acme-dev # Persistent data dir
-Database: db_xwiki_acme_dev db_user: user-xwiki-acme-dev
+
+systemd UNIT: tomcat-xwiki-acme-dev.service
+appurl: server:8080/xwiki-acme-dev
+db_name: db_xwiki_acme_dev
+db_user: user-xwiki-acme-dev
+
+
+
     
