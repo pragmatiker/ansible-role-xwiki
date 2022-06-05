@@ -13,7 +13,7 @@
 - [x] Unpack WAR to webapps folder /opt/tomcat/tomcat-xwiki-INSTANCENAME-STAGE/webapps/xwiki-INSTANCENAME-STAGE
 - [x] Template WEB-INF/hibernate.cfg.xml, WEB-INF/xwiki.cfg & WEB-INF/xwiki.propterties
 - [x] Download and install JDBC driver to WEB-INF/lib
-- [x] Create DB and DB User
+- [x] Create DB "db_xwiki_INSTANCENAE_STAGE" and DB User "user-xwiki-INSTANCENAME-STAGE"
 
 ### ToDo:
 - [ ] Call handler to start tomcat
