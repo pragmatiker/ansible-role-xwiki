@@ -1,3 +1,0 @@
----
-- name: ansible-role-tomcat
-  src: https://github.com/pragmatiker/ansible-role-tomcat
