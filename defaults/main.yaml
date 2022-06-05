@@ -3,6 +3,7 @@
 xwiki_version: 14.4
 xwiki_basedir: "{{basedir | default('/opt/tomcat')}}"
 xwiki_war_dwnldurl: "http://nexus.xwiki.org/nexus/content/groups/public/org/xwiki/platform/xwiki-platform-distribution-war/{{ xwiki_version }}/xwiki-platform-distribution-war-{{ xwiki_version }}.war"
+#xwiki_jdbc_dwnldurl: "https://dlm.mariadb.com/2325871/Connectors/java/connector-java-3.0.5/mariadb-java-client-3.0.5.jar"
 xwiki_jdbc_dwnldurl: "https://downloads.mariadb.com/Connectors/java/connector-java-2.7.1/mariadb-java-client-2.7.1.jar"
 xwiki_archive: "xwiki-{{xwiki_version}}.war"
 xwiki_db_host: "localhost"

@@ -1,7 +1,17 @@
 ---
-- name: "[xwiki_instance_db] - Create some db"
-  shell: "mysql -u root -e \"create database '{{xwiki_db_name}}' default character set utf8mb4 collate utf8mb4_bin\""
-  register: Wahtever
+- name: "[xwiki_instance_db] - Create database: {{xwiki_db_name}}"
+  mysql_db:
+    login_unix_socket: "/run/mysqld/mysqld.sock"
+    check_implicit_admin: yes
+    name: "{{xwiki_db_name}}"
+    collation: "utf8mb4_bin"
+    encoding: "utf8mb4"
 
-- debug:
-    msg: "{{xwiki_db_name}}"
+- name: "[xwiki_instance_db] - Create db user: {{xwiki_db_user}}"
+  mysql_user:
+    login_unix_socket: "/run/mysqld/mysqld.sock"
+    check_implicit_admin: yes
+    name: "{{xwiki_db_user}}"
+    password: "{{xwiki_db_pass}}"
+    priv: '{{xwiki_db_name}}.*:ALL'
+
