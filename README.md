@@ -10,9 +10,9 @@
 - [x] Install MariaDB Server
 - [x] Downlad WAR from xwiki.org
 - [x] Create persistent data dir 
-- [x] Unpack WAR to webapps folder 
+- [x] Unpack WAR to webapps folder /opt/tomcat/tomcat-xwiki-INSTANCENAME-STAGE/webapps/xwiki-INSTANCENAME-STAGE
 - [x] Template WEB-INF/hibernate.cfg.xml, WEB-INF/xwiki.cfg & WEB-INF/xwiki.propterties
-- [x] Download and install JDBC driver to WEBB-INF/lib
+- [x] Download and install JDBC driver to WEB-INF/lib
 - [x] Create DB and DB User
 
 ### ToDo:
