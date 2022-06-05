@@ -1,17 +1,25 @@
 # ansible-role-xwiki
 
-### Minimalist approach to Deploy xwiki with tomcat
-### Uses pragmatiker/ansible-role-tomcat and depends on existing DB
+### Minimalist approach to deploy multiple empty xwiki instances on tomcat & mariadb
+Depends on pragmatiker/ansible-role-tomcat  
+```
+ansible-galaxy install -r requirements.yaml
+```
+
 ### At the Moment it has tasks to:
+- [x] Install MariaDB Server
 - [x] Downlad WAR from xwiki.org
-- [x] Unpack WAR to webapps folder 
-- [x] Create configs for Database and other xwiki setup stuff
-- [x] Make it loop through multiple Instances on one host. prod/dev/qs 
+- [x] Create persistent data dir 
+- [x] Unpack WAR to webapps folder
+- [x] Template WEB-INF/hibernate.cfg.xml, WEB-INF/xwiki.cfg & WEB-INF/xwiki.propterties
+- [x] Download and install JDBC driver to WEB-INF/lib
+- [x] Create DB "db_xwiki_INSTANCENAME_STAGE" and DB User "user-xwiki-INSTANCENAME-STAGE"
 
 ### ToDo:
-- [ ] Create Database on demand
+- [ ] Call handler to start tomcat
+- [ ] Ansible vault via include_vars
  
-### Example Playbook 
+### Example Playbook with minimum needed vars
 ```
 ---
 - name: Setup my xwiki
@@ -52,3 +60,16 @@
   roles:
     - role: ansible-role-tomcat
     - role: ansible-role-xwiki
+```
+ 
+
+### This would yield for the first listet instance  
+```
+/opt/tomcat/tomcat-xwiki-acme-dev # Tomcat instance
+/opt/tomcat/tomcat-xwiki-acme-dev/webapps/xwiki-acme-dev # Deployed WAR file
+/opt/tomcat/data-xwiki-acme-dev # Persistent data dir
+
+systemd UNIT: tomcat-xwiki-acme-dev.service
+appurl: server:8080/xwiki-acme-dev
+db_name: db_xwiki_acme_dev
+db_user: user-xwiki-acme-dev
