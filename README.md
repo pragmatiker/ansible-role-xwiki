@@ -2,6 +2,9 @@
 
 ### Minimalist approach to deploy multiple empty xwiki instances on tomcat & mariadb
 ### Depends on pragmatiker/ansible-role-tomcat
+### Created direcrtory structure
+    /opt/tomcat/tomcat-xwiki-INSTANCENAME-STAGE # Tomcat Instance
+    /opt/tomcat/data-xwiki-INSTANCENAME-STAGE # Persistent data dir for xWiki
 
 ### At the Moment it has tasks to:
 - [x] Install MariaDB Server
@@ -16,7 +19,7 @@
 - [ ] Call handler to start tomcat
 - [ ] Ansible vault via include_vars
  
-### Example Playbook 
+### Example Playbook with minimum needed vars
 ```
 ---
 - name: Setup my xwiki
