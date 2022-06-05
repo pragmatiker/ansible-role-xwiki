@@ -1,4 +1,5 @@
 galaxy_info:
   role_name: ansible-role-xwiki
 dependencies:
-  - role: git+https://github.com/pragmatiker/ansible-role-tomcat
+  - name: ansible-role-tomcat
+    src: git+https://github.com/pragmatiker/ansible-role-tomcat
