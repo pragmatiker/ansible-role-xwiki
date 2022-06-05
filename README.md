@@ -2,7 +2,7 @@
 
 ### Minimalist approach to deploy multiple empty xwiki instances on tomcat & mariadb
 ### Depends on pragmatiker/ansible-role-tomcat
-### Created direcrtory structure
+### Created directory structure
     /opt/tomcat/tomcat-xwiki-INSTANCENAME-STAGE # Tomcat Instance
     /opt/tomcat/data-xwiki-INSTANCENAME-STAGE # Persistent data dir for xWiki
 
