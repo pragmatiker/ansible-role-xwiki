@@ -73,7 +73,3 @@ systemd UNIT: tomcat-xwiki-acme-dev.service
 appurl: server:8080/xwiki-acme-dev
 db_name: db_xwiki_acme_dev
 db_user: user-xwiki-acme-dev
-
-
-
-    
